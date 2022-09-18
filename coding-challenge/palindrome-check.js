@@ -1,5 +1,5 @@
 const palindrome = (str) => {
-  // Regex to remove underscore, nonalphanumeric character (space, underscore, asterisk, etc)
+  // Regex to remove nonalphanumeric character (space, underscore, asterisk, etc)
   const regex = /[\W_]/g
   const strToLower = str.toLowerCase().replace(regex, '')
 
