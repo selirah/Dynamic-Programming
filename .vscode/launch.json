@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch MergeTwoSortedLinkedLists",
+      "request": "launch",
+      "mainClass": "recursion.MergeTwoSortedLinkedLists",
+      "projectName": "Dynamic-Programming_214bdb1"
+    },
+    {
+      "type": "java",
       "name": "Launch ReversedLinkedList",
       "request": "launch",
       "mainClass": "recursion.ReversedLinkedList",

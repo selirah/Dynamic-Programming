@@ -1,4 +1,4 @@
-class LinkedListNode {
+class Node {
   val
   next
 
@@ -30,14 +30,14 @@ const pushLinkedList = (node) => {
     arr.push(tmp.val)
     tmp = tmp.getNext()
   }
-  return arr.join('->')
+  return arr.join(' ')
 }
 
-const n1 = new LinkedListNode(1)
-const n2 = new LinkedListNode(2)
-const n3 = new LinkedListNode(3)
-const n4 = new LinkedListNode(4)
-const n5 = new LinkedListNode(5)
+const n1 = new Node(1)
+const n2 = new Node(2)
+const n3 = new Node(3)
+const n4 = new Node(4)
+const n5 = new Node(5)
 
 n1.setNext(n2)
 n2.setNext(n3)
