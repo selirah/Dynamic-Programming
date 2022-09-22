@@ -16,5 +16,5 @@ console.log(gridTraveler(3, 2)) // 3
 console.log(gridTraveler(3, 3)) // 6
 console.log(gridTraveler(18, 18)) // 2333606220
 
-// O(fib(n)) = O(2^n+m) time
-// O(fib(n)) = O(m + n) space
+// O(gridTraveler(n)) = O(2^n+m) time
+// O(gridTraveler(n)) = O(m + n) space

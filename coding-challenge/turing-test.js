@@ -101,8 +101,54 @@ console.log(winningCard([5, 5], [2, 2])) // -1
 // I takes |a-b| milliseconds to move from index a to index b
 // Write a function to calculate the number of milliseconds needed to type a number with one finger.
 
-var numberGenerator = function (digits, num) {}
+var numberGenerator = function (digits, num) {
+  let arr = []
+  let prevIndex = 0
+  let nextIndex = 0
+  for (let i = 0; i < num.length; i++) {
+    for (j = 0; j < digits.length; j++) {
+      nextIndex = j
+      if (digits[j] === num[i]) {
+        arr.push(Math.abs(nextIndex - prevIndex))
+        prevIndex = j
+      }
+    }
+  }
+
+  return arr.reduce((a, b) => a + b)
+}
 
 console.log('***NUMBER GENERATOR***')
 console.log(numberGenerator('0123456789', '210')) // 4
 console.log(numberGenerator('8459761203', '5439')) // 17
+
+// Given an integer array nums of *unique* elements, return *all possible subsets (the power set)*.
+// The solution set *must not* contain duplicate subsets. Return the solution in *specified order*
+// Example 1
+// Input: nums = [1, 2, 3]
+// Output: [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
+// Example 2
+// Input: nums = [0]
+// Output: [[], [0]]
+
+var subsets = function (nums) {
+  let res = [[]]
+
+  function findSubset(arr, subset) {
+    if (subset.length > 0) res.push([...subset])
+    for (let i = 0; i < arr.length; i++) {
+      subset.push(arr[i])
+      findSubset(arr.slice(i + 1), subset)
+      subset.pop()
+    }
+  }
+
+  findSubset(nums, [])
+  // res = res.sort(function (a, b) {
+  //   return a.length - b.length
+  // })
+  return res
+}
+
+console.log('***ARRAY***')
+console.log(subsets([1, 2, 3]))
