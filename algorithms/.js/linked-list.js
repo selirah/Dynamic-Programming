@@ -7,7 +7,7 @@ class Node {
   }
 }
 
-class LinkedList {
+export class LinkedList {
   // Singly linked list
   head
 
@@ -100,6 +100,21 @@ class LinkedList {
     return current
   }
 
+  nodeAtIndex(index) {
+    // Get the node at index position
+    // Returns a node at index position
+    if (index === 0) return this.head
+    let current = this.head
+    let position = 0
+
+    while (position < index) {
+      current = current.nextNode
+      position += 1
+    }
+
+    return current
+  }
+
   getLinkedList() {
     let current = this.head
     let arr = []
@@ -122,6 +137,6 @@ l.add(4)
 l.add(5)
 l.add(6)
 // console.log(l.search(4))
-l.insert(9, 1)
-console.log(l.getLinkedList())
-l.remove(9)
+// l.insert(9, 1)
+// console.log(l.getLinkedList())
+// l.remove(9)
